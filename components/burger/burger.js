@@ -2,8 +2,9 @@ import styled, {css} from 'styled-components'
 import {color} from 'styled-system'
 
 const BurgerContainer = styled.div`
-    display: flex;;
+    display: flex;
     flex-direction: column;
+    height: 600px;
     width: 300px;
 `;
 
@@ -16,9 +17,9 @@ const CommonStyle = css`
 
 const TopBun = styled.div`
     ${CommonStyle};
-    height: 50px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    height: 50px;
 `;
 
 const Cheese = styled.div`
@@ -46,18 +47,18 @@ export default function Burger(props) {
         <BurgerContainer>
             <TopBun bg='chocolate'/>
             {
-                Array(props.cheese).fill(0).map(() => {
-                    return(<Cheese bg='gold'/>);
+                [...Array(props.cheese).keys()].map((key) => {
+                    return(<Cheese bg='gold' key={key}/>);
                 })
             }
             {
-                Array(props.veg).fill(0).map(() => {
-                    return(<Veg bg='forestGreen'/>);
+                [...Array(props.veg).keys()].map((key) => {
+                    return(<Veg bg='forestGreen' key={key}/>);
                 })
             }
             {
-                Array(props.meat).fill(0).map(() => {
-                    return(<Meat bg='brown'/>);
+                [...Array(props.meat).keys()].map((key) => {
+                    return(<Meat bg='brown' key={key}/>);
                 })
             }
             <BottomBun bg='chocolate'/>
