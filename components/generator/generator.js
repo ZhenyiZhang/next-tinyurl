@@ -1,5 +1,6 @@
-import styled, {css} from 'styled-components';
-import Link from 'next/link';
+import styled, {css} from 'styled-components'
+import Link from 'next/link'
+import Button from '../buttons/Button'
 import getShortUrl from '../../lib/getShortUrl'
 import {useState} from 'react';
 
@@ -26,20 +27,6 @@ const UrlInput = styled.input`
     &:focus {outline: none;}
 `;
 
-const SubmitButton = styled.button`
-    border:none;
-    border-radius: 15px;
-    background: #92de34;
-    color: #025600;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    height: 35px;
-    margin: 5px;
-    width: 150px;
-    &:focus {outline: none;}
-`;
-
 const ResultContainer = styled.div`
     ${box};
     height: 100px;
@@ -59,7 +46,7 @@ export default function Generator() {
     return(
         <GeneratorContainer>
             <UrlInput onChange={(event) => {setUrlInput(event.target.value);}}/>
-            <SubmitButton onClick={() => {urlRequestHandler(urlInput)}}>Get Url</SubmitButton>
+            <Button lightRed medium round transparent onClick={() => {urlRequestHandler(urlInput)}}>Get Url</Button>
             <ResultContainer>
                 <Link href={shortUrl}><a>{shortUrl}</a></Link>
             </ResultContainer>

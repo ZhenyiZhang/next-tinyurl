@@ -10,14 +10,14 @@ const sizes = css`
     
     ${props => props.medium && css`
         border-radius: 5px;
-        font-size: 30px;
+        font-size: 20px;
         height: 50px;
         width: 150px;
     `}
     
     ${props => props.large && css`
         border-radius: 5px;
-        font-size: 35px;
+        font-size: 20px;
         height: 60px;
         width: 180px;
     `}
