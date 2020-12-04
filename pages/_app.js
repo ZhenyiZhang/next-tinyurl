@@ -7,9 +7,10 @@ function MyApp({ Component, pageProps }) {
         <div>
             <Nav>
                 <Link href="/"><A>Home</A></Link>
+                <Link href="/burger"><A>Burger</A></Link>
                 <Link href="/components-review/button/button"><A>Buttons</A></Link>
-                <Link href="/components-review/button-ghost/button"><A>Ghost Buttons</A></Link>
-                <Link href="/components-review/button-round/button"><A>Rounded Button</A></Link>
+                <Link href="/components-review/button-ghost/button"><A>GhostButtons</A></Link>
+                <Link href="/components-review/button-round/button"><A>RoundedButton</A></Link>
             </Nav>
             <Component {...pageProps} />
         </div>

@@ -5,7 +5,11 @@ import colors from './styles/colors';
 const Button = styled.button`
     ${sizes};
     ${colors};
-    ${props => props.transparent ? 
+    /*if has transparent in props
+    make background transparent, if
+    not make text color white
+     */
+    ${props => props.transparent ?
         css`background: transparent;`: 
         css`color: white`};
     ${props => props.round && css`

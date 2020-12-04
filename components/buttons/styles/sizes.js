@@ -1,5 +1,6 @@
 import {css} from 'styled-components';
 
+/*common sizes styles for Button*/
 const sizes = css`
     ${props => props.small && css`
         border-radius: 5px;

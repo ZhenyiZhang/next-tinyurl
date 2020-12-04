@@ -19,6 +19,7 @@ const Button = styled.button`
 `;
 
 export default function ControllerPanel(props) {
+    /*layer and setLayer are parent state passed through props*/
     const addUnit = (layer, setLayer) => {
         setLayer(layer + 1);
     };

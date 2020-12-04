@@ -1,7 +1,10 @@
+import {useState} from 'react'
+
+import styled from 'styled-components'
+
 import Burger from '../components/burger/burger'
 import ControllerPanel from '../components/burger/controlPanel'
-import styled from 'styled-components'
-import {useState} from 'react'
+import Button from '../components/buttons/Button'
 
 const BuilderContainer = styled.div`
     align-items: center;
@@ -9,20 +12,6 @@ const BuilderContainer = styled.div`
     flex-direction: column;
     height: 100vh;
     justify-content: center;
-`;
-
-const ResetButton = styled.button`
-    border:none;
-    border-radius: 15px;
-    background: #92de34;
-    color: #025600;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    height: 35px;
-    margin: 5px;
-    width: 150px;
-    &:focus {outline: none;}
 `;
 
 export default function burgerBuilder() {
@@ -51,7 +40,7 @@ export default function burgerBuilder() {
                 setMeat={setMeat}
                 setVeg={setVeg}
             />
-            <ResetButton onClick={() => reset()}>Reset</ResetButton>
+            <Button round primaryBlue medium onClick={() => reset()}>Reset</Button>
         </BuilderContainer>
     )
 };

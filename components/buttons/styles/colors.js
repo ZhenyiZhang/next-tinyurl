@@ -1,5 +1,6 @@
 import {css} from 'styled-components';
 
+/*common colors style for buttons*/
 const colors = css`
     ${props => props.primaryBlue && css`
         background: #606DDA;

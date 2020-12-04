@@ -1,8 +1,10 @@
+import {useState} from 'react';
+
 import styled, {css} from 'styled-components'
 import Link from 'next/link'
-import Button from '../buttons/Button'
+
 import getShortUrl from '../../lib/getShortUrl'
-import {useState} from 'react';
+import Button from '../buttons/Button'
 
 const GeneratorContainer = styled.div`
     border-radius: 5%;
@@ -39,7 +41,7 @@ export default function Generator() {
     const urlRequestHandler = (url) => {
         getShortUrl(url)
             .then(response => {setShortUrl(response);
-            console.log(response)})
+                console.log(response)})
             .catch(() => setShortUrl('Error'));
     };
 
