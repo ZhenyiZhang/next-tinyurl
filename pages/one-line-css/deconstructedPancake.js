@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 const Card = styled.div`
     background: #E87574;
+    //flex-grow flex-shrink flex-basis|auto|initial|inherit;
+    //@note: not understand the first and second parameters 
     flex: 1 0 150px;
     margin: 5px;
 `;

@@ -6,7 +6,8 @@ export default function buttons() {
       <ButtonsContainer>
         <Button round primaryBlue small>Button</Button>
           <Button round primaryBlue medium>Button</Button>
-          <Button round primaryBlue medium shadow>Button</Button>
+          <Button round primaryBlue large shadow>Button</Button>
+          <Button round primaryBlue large shadow disabled={true}>Button</Button>
       </ButtonsContainer>
   );
 };

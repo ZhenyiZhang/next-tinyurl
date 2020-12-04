@@ -22,6 +22,10 @@ const Button = styled.button`
     margin: 0.5em 1em;
     text-align: center;
     transition: 0.3s;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     &:focus {outline: none;}
     &:hover{opacity: 0.5;}
 `;
