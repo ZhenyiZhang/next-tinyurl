@@ -5,31 +5,31 @@ import getShortUrl from '../../lib/getShortUrl'
 import {useState} from 'react';
 
 const GeneratorContainer = styled.div`
-    align-items: center;
     border-radius: 5%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-rows: 4fr 1fr 2fr;
+    height: 40vh;
     padding: 1rem;
-    width: 800px;
+    justify-items: center;
+    width: 70vw;
 `;
 
 const box = css`
     border: 2px solid black;
     border-radius: 10px;
+    font-size: 1.5rem;
+    height: 100%;
     padding: 0.5rem;
-    width: 70%;
+    width: 100%;
 `;
 
-const UrlInput = styled.input`
+const UrlInput = styled.textarea`
     ${box};
-    font-size: 1rem;
-    height: 50px;
     &:focus {outline: none;}
 `;
 
 const ResultContainer = styled.div`
     ${box};
-    height: 100px;
 `;
 
 export default function Generator() {
@@ -45,7 +45,7 @@ export default function Generator() {
 
     return(
         <GeneratorContainer>
-            <UrlInput onChange={(event) => {setUrlInput(event.target.value);}}/>
+            <UrlInput type="text" onChange={(event) => {setUrlInput(event.target.value);}}/>
             <Button lightRed medium round transparent onClick={() => {urlRequestHandler(urlInput)}}>Get Url</Button>
             <ResultContainer>
                 <Link href={shortUrl}><a>{shortUrl}</a></Link>
