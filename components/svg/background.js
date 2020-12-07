@@ -1,4 +1,6 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
+
+import sizes from '../../lib/constants/screen-sizes/sizes';
 
 const StyledContainer = styled.div`
     height: 100%;
@@ -6,8 +8,11 @@ const StyledContainer = styled.div`
     overflow: hidden;
     position: Absolute;
     top: 0;
-    width: 50%;
-    z-index: 1;
+    width: 100%;
+    z-index: initial;
+    @media (min-width: ${sizes.maxMobileWidth}) {
+        width: 50%;
+    }
 `;
 
 export default function CurvedBackground() {
@@ -17,12 +22,10 @@ export default function CurvedBackground() {
         "Q 300 1100, 250 1250 " +
         "Q 500 1250, 200 1250 " +
         "L 0 1250 z";
-
     return(
         <StyledContainer>
             <svg viewBox='0 0 500 1250'>
-                <path fill='#606DDA' d={path}>
-                </path>
+                <path fill='#606DDA' d={path}/>
             </svg>
         </StyledContainer>
     );

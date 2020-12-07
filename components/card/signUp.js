@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Button from '../buttons/button';
+import sizes from '../../lib/constants/screen-sizes/sizes';
 
 import {layout, flexbox, space, typography} from 'styled-system';
 
@@ -11,6 +12,10 @@ const StyledContainer = styled.div`
     grid-template-rows: auto auto 1fr auto;
     height: 70%;
     width: 60%;
+    z-index: 2;
+    @media (max-width: ${sizes.maxMobileWidth}) {
+        background: white;
+    }
 `;
 
 const StyledForm = styled.form`
@@ -25,25 +30,22 @@ const StyledForm = styled.form`
 const StyledFormGroup = styled.div`
     width: 70%;
     height: 20%;
-    //special case, layout has to override
     ${layout};
     ${flexbox};
 `;
 
 const StyledLabel = styled.label`
-    font-size: 12px;
+    font-size: 15px;
 `;
 
 const StyledInput = styled.input`
     border: 1px solid #D3D3D3;
     border-radius: 2px;
     height: 40%;
+    padding-left: 10px;
     margin: 5px;
     width: 100%;
-    &:focus {
-        outline: none;
-    }
-    //special case, layout has to override
+    &:focus {outline: none;}
     ${layout};
     ${space};
 `;
@@ -58,7 +60,7 @@ const StyledText = styled.div`
 export default function SignUpForm() {
     return (
         <StyledContainer>
-            <StyledText textAlign="center" margin="20px">Pocket MD Logo</StyledText>
+            <StyledText textAlign="center" m="auto">Pocket MD Logo</StyledText>
             <StyledForm>
                 <StyledText margin={20} width="70%" fontSize={30}>Sign up</StyledText>
             </StyledForm>
@@ -78,7 +80,7 @@ export default function SignUpForm() {
                     <StyledLabel>Password</StyledLabel>
                     <StyledInput type="text" placeholder="Create Password"/>
                 </StyledFormGroup>
-                <Button primaryBlue round medium>Continue</Button>
+                <Button primaryPurple round medium>Continue</Button>
             </StyledForm>
         </StyledContainer>
     );

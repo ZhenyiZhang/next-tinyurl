@@ -3,7 +3,7 @@ import {useState} from 'react';
 import styled, {css} from 'styled-components';
 import Link from 'next/link';
 
-import getShortUrl from '../../lib/getShortUrl';
+import getShortUrl from '../../lib/functions/getShortUrl';
 import Button from '../buttons/button';
 
 const GeneratorContainer = styled.div`
