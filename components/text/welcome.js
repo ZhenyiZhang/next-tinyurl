@@ -24,8 +24,12 @@ export default function Welcome() {
     return(
         <StyledContainer>
             <StyledLine mb={30}>
-                <StyledText color="white" fontSize={40}>Welcome to&nbsp;</StyledText>
-                <StyledText color="orange" fontSize={40} opacity="0.7">PocketMD</StyledText>
+                <StyledText color="white" fontSize={40}>
+                    Welcome to&nbsp;
+                </StyledText>
+                <StyledText color="#fdad5c" fontSize={40}>
+                    PocketMD
+                </StyledText>
             </StyledLine>
             <StyledLine ml={35}>
                 <StyledText color="white" fontSize={23}>
