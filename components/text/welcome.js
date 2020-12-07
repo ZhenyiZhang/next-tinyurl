@@ -39,16 +39,18 @@ export default function Welcome() {
                 <StyledHeader color="white">
                     Welcome to&nbsp;
                 </StyledHeader>
+
                 <StyledHeader color="#fdad5c">
                     PocketMD
                 </StyledHeader>
             </StyledLine>
+
             <StyledLine ml={35}>
                 <StyledText color="white">
                     Create a <b>free account</b> to get 24/7 access to
                 </StyledText>
-            </StyledLine>
-            <br/>
+            </StyledLine> <br/>
+
             <StyledLine ml={50}>
                 <StyledText color="white">
                     a doctor from the comfort of your home

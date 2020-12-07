@@ -61,25 +61,32 @@ export default function SignUpForm() {
     return (
         <StyledContainer>
             <StyledText textAlign="center" m="auto">Pocket MD Logo</StyledText>
+
             <StyledForm>
                 <StyledText margin={20} width="70%" fontSize={30}>Sign up</StyledText>
             </StyledForm>
+
             <StyledForm>
                 <StyledFormGroup>
                     <StyledLabel>Email</StyledLabel>
+
                     <StyledInput type="text" placeholder="example.email@gmail.com"/>
                 </StyledFormGroup>
+
                 <StyledFormGroup>
                     <StyledLabel>Your Name</StyledLabel>
+
                     <StyledFormGroup height="100%" width="100%" display="flex" justifyContent="space-between">
                         <StyledInput type="text" placeholder="First Name" ml='0px'/>
                         <StyledInput type="text" placeholder="Last Name" mr='0px'/>
                     </StyledFormGroup>
                 </StyledFormGroup>
+
                 <StyledFormGroup>
                     <StyledLabel>Password</StyledLabel>
                     <StyledInput type="text" placeholder="Create Password"/>
                 </StyledFormGroup>
+
                 <Button primaryPurple round medium>Continue</Button>
             </StyledForm>
         </StyledContainer>
