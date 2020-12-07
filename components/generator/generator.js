@@ -1,10 +1,10 @@
 import {useState} from 'react';
 
-import styled, {css} from 'styled-components'
-import Link from 'next/link'
+import styled, {css} from 'styled-components';
+import Link from 'next/link';
 
-import getShortUrl from '../../lib/getShortUrl'
-import Button from '../buttons/Button'
+import getShortUrl from '../../lib/getShortUrl';
+import Button from '../buttons/button';
 
 const GeneratorContainer = styled.div`
     border-radius: 5%;

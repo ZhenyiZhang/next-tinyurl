@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Container = styled.div`
     display: grid;
@@ -14,7 +14,7 @@ const Span12 = styled.div`
 
 const Span6 = styled.div`
     background: #0070f3;
-    grid-column: 1 / 7;
+    grid-column: 3 / 10;
 `;
 
 const Span4 = styled.div`

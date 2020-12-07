@@ -14,3 +14,24 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/*.custom-shape-divider-top-1607314731 {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  overflow: hidden;*/
+/*  line-height: 0;*/
+/*  transform: rotate(180deg);*/
+/*}*/
+
+/*.custom-shape-divider-top-1607314731 svg {*/
+/*  position: relative;*/
+/*  display: block;*/
+/*  width: calc(163% + 1.3px);*/
+/*  height: 164px;*/
+/*}*/
+
+/*.custom-shape-divider-top-1607314731 .shape-fill {*/
+/*  fill: #8D76E1;*/
+/*}*/

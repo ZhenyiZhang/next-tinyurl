@@ -14,10 +14,10 @@ const Button = styled.button`
         css`color: white`};
     ${props => props.round && css`
         border-radius: 50px;
-    `}
+    `};
     ${props => props.shadow && css`
         box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
-    `}
+    `};
     padding: 0.25em 1em;
     margin: 0.5em 1em;
     text-align: center;
@@ -28,6 +28,8 @@ const Button = styled.button`
     }
     &:focus {outline: none;}
     &:hover{opacity: 0.5;}
+    //must after hover
+    &:active {opacity: 1}
 `;
 
 export default Button;

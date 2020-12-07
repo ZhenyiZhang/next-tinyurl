@@ -1,10 +1,10 @@
-import {useState} from 'react'
+import {useState} from 'react';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import Burger from '../components/burger/burger'
-import ControllerPanel from '../components/burger/controlPanel'
-import Button from '../components/buttons/Button'
+import Burger from '../components/burger/burger';
+import ControllerPanel from '../components/burger/controlPanel';
+import Button from '../components/buttons/button';
 
 const BuilderContainer = styled.div`
     align-items: center;

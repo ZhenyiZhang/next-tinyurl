@@ -1,5 +1,5 @@
-import Button from '../../../components/buttons/Button'
-import ButtonsContainer from '../styles/ButtonContainer'
+import Button from '../../../components/buttons/button';
+import ButtonsContainer from '../styles/ButtonContainer';
 
 export default function buttons() {
   return(
