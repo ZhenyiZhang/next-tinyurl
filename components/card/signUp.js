@@ -1,63 +1,31 @@
-import styled from 'styled-components';
+import isEmail from 'isemail';
 
 import Button from '../buttons/button';
-import sizes from '../../lib/constants/screen-sizes/sizes';
 
-import {layout, flexbox, space, typography} from 'styled-system';
-
-const StyledContainer = styled.div`
-    border-radius: 30px;
-    box-shadow: 1px 1px 20px rgba(96, 109, 218, 0.5);
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    height: 70%;
-    width: 60%;
-    z-index: 2;
-    @media (max-width: ${sizes.maxMobileWidth}) {
-        background: white;
-    }
-`;
-
-const StyledForm = styled.form`
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-Start;
-    width: 100%;
-    height: 100%;
-`;
-
-const StyledFormGroup = styled.div`
-    width: 70%;
-    height: 20%;
-    ${layout};
-    ${flexbox};
-`;
-
-const StyledLabel = styled.label`
-    font-size: 15px;
-`;
-
-const StyledInput = styled.input`
-    border: 1px solid #D3D3D3;
-    border-radius: 2px;
-    height: 40%;
-    padding-left: 10px;
-    margin: 5px;
-    width: 100%;
-    &:focus {outline: none;}
-    ${layout};
-    ${space};
-`;
-
-const StyledText = styled.div`
-    ${space}
-    ${layout}
-    ${typography};
-`;
+import {useForm} from 'react-hook-form';
+import {StyledContainer, StyledForm, StyledFormGroup, StyledLabel, StyledInput, StyledText }from './styles/signUp';
 
 
 export default function SignUpForm() {
+    const {register, handleSubmit, errors, setError} = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+    };
+
+    //@note: how to put error message when validate
+    const validateEmail = (email) => {
+        // if(!isEmail.validate(email)) {
+        //     setError('email', {
+        //         type: 'validate',
+        //         message: 'invalid email'
+        //     });
+        //     return false;
+        // }
+        // return true;
+        return isEmail.validate(email);
+    };
+
     return (
         <StyledContainer>
             <StyledText textAlign="center" m="auto">Pocket MD Logo</StyledText>
@@ -66,28 +34,48 @@ export default function SignUpForm() {
                 <StyledText margin={20} width="70%" fontSize={30}>Sign up</StyledText>
             </StyledForm>
 
-            <StyledForm>
+            <StyledForm onSubmit={handleSubmit(onSubmit)}>
                 <StyledFormGroup>
                     <StyledLabel>Email</StyledLabel>
-
-                    <StyledInput type="text" placeholder="example.email@gmail.com"/>
+                    <StyledInput
+                        name="email"
+                        type="text"
+                        placeholder="example.email@gmail.com"
+                        ref={register({required: true, validate: validateEmail})}/>
+                    {errors.email && <p style={{"color": "red"}}>email address is invalid</p>}
                 </StyledFormGroup>
 
                 <StyledFormGroup>
                     <StyledLabel>Your Name</StyledLabel>
-
                     <StyledFormGroup height="100%" width="100%" display="flex" justifyContent="space-between">
-                        <StyledInput type="text" placeholder="First Name" ml='0px'/>
-                        <StyledInput type="text" placeholder="Last Name" mr='0px'/>
+                        <StyledInput
+                            name="firstName"
+                            type="text"
+                            placeholder="First Name"
+                            ml='0px'
+                            ref={register({required: true})}/>
+                        <StyledInput
+                            name="lastName"
+                            type="text"
+                            placeholder="Last Name"
+                            mr='0px'
+                            ref={register({required: true})}/>
                     </StyledFormGroup>
+                    {(errors.firstName?.type === 'required' || errors.lastName?.type === 'required')
+                    && <p style={{"color": "red"}}>first/last name is required</p>}
                 </StyledFormGroup>
 
                 <StyledFormGroup>
                     <StyledLabel>Password</StyledLabel>
-                    <StyledInput type="text" placeholder="Create Password"/>
+                    <StyledInput
+                        name="password"
+                        type="password"
+                        placeholder="Create Password"
+                        ref={register({required: true})}/>
+                    {errors.password?.type === 'required' && <p style={{"color": "red"}}>password is required</p>}
                 </StyledFormGroup>
 
-                <Button primaryPurple round medium>Continue</Button>
+                <Button type="submit" primaryPurple round medium>Continue</Button>
             </StyledForm>
         </StyledContainer>
     );

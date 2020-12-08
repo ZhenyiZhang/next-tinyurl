@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
     top: 25%;
     left: 8%;
     z-index: 2;
-    @media screen and (max-width: ${sizes.maxMobileWidth}) {
+    @media screen and (max-width: ${sizes.welcomeTextTop}) {
         top: 5%;
     }
 `;
@@ -39,7 +39,6 @@ export default function Welcome() {
                 <StyledHeader color="white">
                     Welcome to&nbsp;
                 </StyledHeader>
-
                 <StyledHeader color="#fdad5c">
                     PocketMD
                 </StyledHeader>
@@ -50,7 +49,6 @@ export default function Welcome() {
                     Create a <b>free account</b> to get 24/7 access to
                 </StyledText>
             </StyledLine> <br/>
-
             <StyledLine ml={50}>
                 <StyledText color="white">
                     a doctor from the comfort of your home
